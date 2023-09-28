@@ -16,7 +16,8 @@ CREATE TABLE tenis(
     esporte varchar(40),
     tamanho int not null,
     preco float,
+    id_marca INT NOT NULL,
     sexo varchar(1) /*M = Masc., F = Fem., U = Unisex*/
     constraint pk_tenis primary key (id)
 );
-ALTER TABLE tenis ADD CONSTRAINT fk_marca FOREIGN KEY (id_marcas) REFERENCES marcas (id);
+ALTER TABLE tenis ADD CONSTRAINT fk_marca FOREIGN KEY (id_marca) REFERENCES marcas (id);
