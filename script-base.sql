@@ -20,4 +20,15 @@ CREATE TABLE tenis(
     sexo varchar(1) /*M = Masc., F = Fem., U = Unisex*/
     constraint pk_tenis primary key (id)
 );
+
+CREATE TABLE esportes(
+    id int AUTO_INCREMENT NOT NULL,
+    nome varchar(200) NOT NULL,
+    constraint pk_esporte primary key (id)
+);
+
+INSERT INTO esportes (nome) VALUES ("Basquete");
+INSERT INTO esportes (nome) VALUES ("Futebol");
+INSERT INTO esportes (nome) VALUES ("Corrida");
+
 ALTER TABLE tenis ADD CONSTRAINT fk_marca FOREIGN KEY (id_marca) REFERENCES marcas (id);
