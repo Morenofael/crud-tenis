@@ -1,4 +1,8 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 include_once(__DIR__ . "/../../controller/EsporteController.php");
 include_once(__DIR__ . "/../../controller/MarcaController.php");
 include_once(__DIR__ . "/../include/header.php");
@@ -7,7 +11,7 @@ $esporteCont = new EsporteController();
 $esportes = $esporteCont->listar();
 $marcaCont = new MarcaController();
 $marcas = $marcaCont->listar();
-print_r($esportes);
+print_r($marcas);
 ?>
 <h2><?php echo (!$aluno || $aluno->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Aluno</h2>
 
@@ -18,8 +22,5 @@ print_r($esportes);
     <label for="selEsporte">Esporte: </label><br>
     <select name="esporte" id="selEsporte">
         <option value="">Selecione</option>
-        <?php foreach($esportes as $esporte): ?>
-            <!-- TODO terminar formulario -->
-        <?php endforeach;?>
     </select>
 </form>

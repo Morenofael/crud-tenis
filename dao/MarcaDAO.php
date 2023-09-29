@@ -24,7 +24,7 @@ class MarcaDAO{
             $m->setId($reg['id'])
                 ->setNome($reg['nome'])
                 ->setNacionalidade($reg['nacionalidade']);
-            array_push($esportes, $m);
+            array_push($marcas, $m);
         }
 }
 }
