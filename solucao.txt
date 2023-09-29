@@ -1,0 +1,4 @@
+Escrevendo isso para dar instruções sobre como resolver os problemas (to no pc da escola, é ruim de commitar)
+Em TenisController tem uma linha comentada (linha 15). Descomente.
+Em listar.php tem uma variavel $a. O problema é que ela não existe. troque por $t.
+Ainda não sei como resolver o problema das marcas e esportes terem o mesmo valor que nome.
