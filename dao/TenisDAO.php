@@ -13,14 +13,7 @@ class TenisDAO{
     }
 
     public function list() {
-        $sql = "SELECT t.*," . 
-                " m.nome AS nome_marca, m.nacionalidade AS nacionalidade_marca" . 
-                " FROM tenis t" .
-                " JOIN marcas m ON (m.id = t.id_marca)" .
-                " e.nome AS nome_esporte" . 
-                " FROM tenis t" .
-                " JOIN esportes e ON (e.id = t.id_esporte)" . 
-                " ORDER BY a.nome";
+        $sql = "SELECT * FROM tenis"; 
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();
@@ -51,15 +44,14 @@ class TenisDAO{
 
             $marca = new Marca();
             $marca->setId($reg['id_marca'])
-                ->setNome($reg['nome_curso'])
-                ->setNacionalidade($reg['nacionalidade_marca']);            
+                ->setNome($reg['nome']);
             $tenis->setMarca($marca)
                     ->setSexo($reg["sexo"]);
             $esporte = new Esporte();
             $esporte->setId($reg['id_esporte'])
-                    ->setNome($reg['nome_esporte']);
+                    ->setNome($reg['nome']);
             $tenis->setEsporte($esporte);
-            array_push($alunoss, $tenis);
+            array_push($teniss, $tenis);
         }
 
         return $teniss;

@@ -8,37 +8,41 @@ require_once(__DIR__ . "/../../controller/TenisController.php");
 
 $tenisCont = new TenisController();
 $tenis = $tenisCont->listar();
-//print_r($alunos);
+print_r($tenis);
 ?>
 
 <?php 
 require(__DIR__ . "/../include/header.php");
 ?>
 
-<h4>Listagem de alunos</h4>
+<h4>Listagem de tenis</h4>
 
 <div>
-    <a class="btn btn-success" href="inserir.php">Inserir</a>
+    <a href="inserir.php">Inserir</a>
 </div>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Idade</th>
-            <th>Estrangeiro</th>
-            <th>Curso</th>
+            <th>Tamanho</th>
+            <th>Preco</th>
+            <th>Marca</th>
+            <th>Sexo</th>
+            <th>Esporte</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach($alunos as $a): ?>
+        <?php foreach($tenis as $t): ?>
             <tr>
-                <td><?= $a->getNome(); ?></td>
-                <td><?= $a->getIdade(); ?></td>
-                <td><?= $a->getEstrangeiroTexto(); ?></td>
-                <td><?= $a->getCurso(); ?></td>
+                <td><?= $t->getNome(); ?></td>
+                <td><?= $t->getTamanho(); ?></td>
+                <td><?= $t->getPreco(); ?></td>
+                <td><?= $t->getMarca(); ?></td>
+                <td><?= $t->getSexo(); ?></td>
+                <td><?= $t->getEsporte(); ?></td>
                 <td><a href="alterar.php?idAluno=<?= $a->getId() ?>"> 
                         <img src="../../img/btn_editar.png" /> 
                     </a>

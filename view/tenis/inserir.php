@@ -45,7 +45,7 @@ if(isset($_POST['submetido'])) {
         exit;
     } else { //Em caso de erros, exibí-los
         $msgErro = implode("<br>", $erros);
-        //print_r($erros);
+        print_r($erros);
     }
 }
 
