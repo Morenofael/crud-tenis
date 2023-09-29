@@ -13,7 +13,7 @@ class TenisDAO{
     }
 
     public function list() {
-        $sql = "SELECT * FROM tenis"; 
+        $sql = "SELECT * FROM `tenis`"; 
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();
