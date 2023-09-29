@@ -1,6 +1,6 @@
 <?php
 
-define("DB_HOST", "mysql-server");
+define("DB_HOST", "localhost");
 define("DB_NAME", "crud_tenis");
 define("DB_USER", "newuser");
 define("DB_PASSWORD", "password");
