@@ -15,9 +15,9 @@ class TenisController {
         // $this->tenisService = new TenisService();
     }
 
-    // public function listar() {
-    //     return $this->tenisDAO->list();        
-    // }
+    public function listar() {
+        return $this->tenisDAO->list();        
+    }
 
     public function inserir(Tenis $tenis) {
         //Valida e retorna os erros caso existam
