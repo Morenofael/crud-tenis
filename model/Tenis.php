@@ -6,7 +6,6 @@ require_once(__DIR__ . "/Marca.php");
 class Tenis{
     private ?int $id;
     private ?string $nome;
-    private ?int $tamanho;
     private ?float $preco;
     private ?Marca $marca;
     private ?string $sexo;
@@ -53,14 +52,6 @@ class Tenis{
     }
     public function getMarca(){
         return $this->marca;
-    }
-
-    public function setTamanho($tamanho){
-        $this->$tamanho = $tamanho;
-        return $this;
-    }
-    public function getTamanho(){
-        return $this->tamanho;
     }
 
     public function setSexo($sexo){

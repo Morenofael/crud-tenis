@@ -22,10 +22,10 @@ class TenisDAO{
 
     public function insert(Tenis $tenis) {
         $sql = "INSERT INTO tenis" . 
-                " (nome, tamanho, preco, id_marca, sexo, id_esporte)" .
-                " VALUES (?, ?, ?, ?, ?, ?)";
+                " (nome, preco, id_marca, sexo, id_esporte)" .
+                " VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$tenis->getNome(), $tenis->getTamanho(), 
+        $stmt->execute([$tenis->getNome(), 
                         $tenis->getPreco(), 
                         $tenis->getMarca()->getId(),
                         $tenis->getSexo(),
@@ -39,7 +39,6 @@ class TenisDAO{
             $tenis = new Tenis();
             $tenis->setId($reg['id'])
                 ->setNome($reg['nome'])
-                ->setTamanho($reg['tamanho'])
                 ->setPreco($reg['preco']);
 
             $marca = new Marca();

@@ -25,7 +25,6 @@ require(__DIR__ . "/../include/header.php");
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Tamanho</th>
             <th>Preco</th>
             <th>Marca</th>
             <th>Sexo</th>
@@ -38,7 +37,6 @@ require(__DIR__ . "/../include/header.php");
         <?php foreach($tenis as $t): ?>
             <tr>
                 <td><?= $t->getNome(); ?></td>
-                <td><?= $t->getTamanho(); ?></td>
                 <td><?= $t->getPreco(); ?></td>
                 <td><?= $t->getMarca(); ?></td>
                 <td><?= $t->getSexo(); ?></td>

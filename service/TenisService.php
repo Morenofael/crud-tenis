@@ -11,10 +11,6 @@ class TenisService {
             array_push($erros, "Informe o nome!");
         }
 
-        if(! $tenis->getTamanho()) {
-            array_push($erros, "Informe o tamanho!");
-        }
-
         if(! $tenis->getPreco()) {
             array_push($erros, "Informe o pre,co!");
         }
