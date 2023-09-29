@@ -8,7 +8,6 @@ require_once(__DIR__ . "/../../controller/TenisController.php");
 
 $tenisCont = new TenisController();
 $tenis = $tenisCont->listar();
-print_r($tenis);
 ?>
 
 <?php 

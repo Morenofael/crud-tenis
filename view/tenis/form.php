@@ -12,7 +12,7 @@ $esportes = $esporteCont->listar();
 $marcaCont = new MarcaController();
 $marcas = $marcaCont->listar();
 ?>
-<h2><?php echo (!$aluno || $aluno->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Aluno</h2>
+<h2><?php echo (!$aluno || $aluno->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Tenis</h2>
 
 <form id="frmTenis" method="POST">
     <label for="txtNome">Nome: </label><br>

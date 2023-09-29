@@ -22,7 +22,6 @@ if(isset($_POST['submetido'])) {
     //para persistencia
     $tenis = new Tenis();
     $tenis->setNome($nome);
-    $tenis->setTamanho($tamanho);
     $tenis->setPreco($preco);
     if($idMarca) {
         $marca = new Marca();
@@ -35,15 +34,15 @@ if(isset($_POST['submetido'])) {
         $esporte->setId($idEsporte);
         $tenis->setEsporte($esporte);
     }
-
     $tenisCont = new TenisController();
     $erros = $tenisCont->inserir($tenis);
-
     if(! $erros) { //Caso não tenha erros
         //Redirecionar para o listar
+        echo "nao tem erros";
         header("location: listar.php");
         exit;
     } else { //Em caso de erros, exibí-los
+        echo "tem erros";
         $msgErro = implode("<br>", $erros);
         print_r($erros);
     }
