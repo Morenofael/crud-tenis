@@ -25,5 +25,6 @@ class EsporteDAO{
                 ->setNome($reg['nome']);
             array_push($esportes, $e);
         }
+        return $esportes;
 }
 }

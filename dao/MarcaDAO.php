@@ -26,5 +26,6 @@ class MarcaDAO{
                 ->setNacionalidade($reg['nacionalidade']);
             array_push($marcas, $m);
         }
+        return $marcas;
 }
 }
