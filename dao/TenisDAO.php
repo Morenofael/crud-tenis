@@ -43,14 +43,8 @@ class TenisDAO{
     public function findById(int $id) {
         $conn = Connection::getConnection();
 
-        $sql = "SELECT t.*," . 
-                " m.nome AS nome_marca, m.nacionalidade AS nacionalidade_marca" . 
-                " FROM tenis t" .
-                " JOIN marcas m ON (m.id = t.id_marca)" .
-                " e.nome AS nome_esporte".
-                " FROM tenis t".
-                " JOIN esportes e ON (e.id = t.id_esporte)".
-                " WHERE t.id = ?";
+        $sql = "SELECT * FROM tenis" . 
+                " WHERE id = ?";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([$id]);
