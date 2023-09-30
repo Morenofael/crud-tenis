@@ -41,7 +41,7 @@ require(__DIR__ . "/../include/header.php");
                 <td><?= $t->getSexo(); ?></td>
                 <td><?= $t->getEsporte(); ?></td>
                 <td><a href="alterar.php?idAluno=<?= $t->getId() ?>"> 
-                        <img src="../../img/btn_editar.png" /> 
+                         
                     </a>
                 </td>
                 <td><a href="excluir.php?idAluno=<?= $t->getId() ?>"
