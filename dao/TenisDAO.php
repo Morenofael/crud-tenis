@@ -32,6 +32,18 @@ class TenisDAO{
                         $tenis->getEsporte()->getId()]);
     }
 
+    public function update(Tenis $tenis) {
+        $conn = Connection::getConnection();
+
+        $sql = "UPDATE tenis SET nome = ?, preco = ?,". 
+            " id_marca = ?, sexo = ?, id_esporte = ?".
+            " WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$tenis->getNome(), $tenis->getPreco(), 
+                        $tenis->getMarca()->getId(), $tenis->getSexo(),
+                        $tenis->getEsporte()->getId(), $tenis->getId()]);
+    }
+
     public function deleteById(int $id) {
         $conn = Connection::getConnection();
 

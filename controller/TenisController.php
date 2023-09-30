@@ -19,6 +19,15 @@ class TenisController {
         return $this->tenisDAO->list();        
     }
 
+    public function atualizar(Tenis $tenis){
+        $erros = $this->tenisService->validarDados($tenis);
+        if($erros) return $erros;
+            
+        $this->tenisDAO->update($tenis);
+        return array();
+        
+    }
+
     public function excluirPorId(int $id){
         return $this->tenisDAO->deleteById($id);
     }
