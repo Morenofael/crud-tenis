@@ -19,6 +19,10 @@ class TenisController {
         return $this->tenisDAO->list();        
     }
 
+    public function excluirPorId(int $id){
+        return $this->tenisDAO->deleteById($id);
+    }
+
     public function buscarPorId(int $id) {
         return $this->tenisDAO->findById($id);
     }

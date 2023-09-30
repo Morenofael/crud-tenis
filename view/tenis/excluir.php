@@ -16,8 +16,7 @@ if(! $tenis) {
     exit;
 }
 
-//Excluir o aluno
-$alunoCont->excluirPorId($aluno->getId());
+$tenisCont->excluirPorId($tenis->getId()); //TODO implementar exlusão por id
 
 //Redirecionar para a listar
 header("location: listar.php");

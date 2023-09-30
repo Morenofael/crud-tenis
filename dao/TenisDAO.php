@@ -32,6 +32,14 @@ class TenisDAO{
                         $tenis->getEsporte()->getId()]);
     }
 
+    public function deleteById(int $id) {
+        $conn = Connection::getConnection();
+
+        $sql = "DELETE FROM tenis WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$id]);
+    }
+
     public function findById(int $id) {
         $conn = Connection::getConnection();
 
