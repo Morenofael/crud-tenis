@@ -18,15 +18,6 @@ $marcas = $marcaCont->listar();
     <label for="txtNome">Nome: </label><br>
     <input type="text" name="nome" id="txtNome"><br>
 
-    <label for="selTamanho">Tamanho: </label><br>
-    <select name="tamanho" id="selTamanho">
-        <?php
-            for($i = 1; $i<50; $i++){
-                echo "<option value='" . $i . "'>" . $i . "</option>";
-            }
-        ?>
-    </select><br>
-
     <label for="txtPreco">Pre,co: </label><br>
     <input type="number" name="preco" id="txtPreco"><br>
     
