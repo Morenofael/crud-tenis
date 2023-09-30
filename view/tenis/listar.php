@@ -40,13 +40,13 @@ require(__DIR__ . "/../include/header.php");
                 <td><?= $t->getMarca(); ?></td>
                 <td><?= $t->getSexo(); ?></td>
                 <td><?= $t->getEsporte(); ?></td>
-                <td><a href="alterar.php?idTenis=<?= $t->getId() ?>"> 
-                        Excluir 
+                <td><a href="editar.php?idTenis=<?= $t->getId() ?>"> 
+                        Editar 
                     </a>
                 </td>
                 <td><a href="excluir.php?idTenis=<?= $t->getId() ?>"
                        onclick="return confirm('Confirma a exclusão?');" > 
-                        Editar 
+                        Excluir 
                     </a>
                 </td>
             </tr>
