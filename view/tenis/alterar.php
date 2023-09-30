@@ -34,7 +34,6 @@ if(isset($_POST['submetido'])) {
         $esporte->setId($idEsporte);
         $tenis->setEsporte($esporte);
     }
-    print_r($tenis);
     $tenisCont = new TenisController();
     $erros = $tenisCont->atualizar($tenis);
 
