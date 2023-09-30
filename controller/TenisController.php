@@ -12,7 +12,7 @@ class TenisController {
 
     public function __construct() {
         $this->tenisDAO = new TenisDAO();        
-        // $this->tenisService = new TenisService();
+        $this->tenisService = new TenisService();
     }
 
     public function listar() {

@@ -13,12 +13,11 @@ INSERT INTO marcas (nome, nacionalidade) values ("Nike", "JP");
 CREATE TABLE tenis(
     id int AUTO_INCREMENT NOT NULL,
     nome varchar(200) NOT NULL,
-    esporte varchar(40),
-    tamanho int not null,
     preco float,
     id_marca INT NOT NULL,
     sexo varchar(1) /*M = Masc., F = Fem., U = Unisex*/
-    constraint pk_tenis primary key (id)
+    constraint pk_tenis primary key (id),
+    id_esporte varchar(40)
 );
 
 CREATE TABLE esportes(
