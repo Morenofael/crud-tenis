@@ -6,13 +6,12 @@ require_once(__DIR__ . "/../../model/Marca.php");
 require_once(__DIR__ . "/../../model/Esporte.php");
 
 $msgErro = '';
-$aluno = null;
+$tenis = null;
 
 $tenisCont = new TenisController();
 
 if(isset($_POST['submetido'])) {
     $nome = trim($_POST['nome']) ? trim($_POST['nome']) : null;
-    $tamanho = $_POST['tamanho'] ? $_POST['tamanho'] : null;
     $preco = is_numeric($_POST['preco']) ? $_POST['preco'] : null;
     $idMarca = is_numeric($_POST['marca']) ? $_POST['marca'] : null;
     $sexo = trim($_POST['sexo']) ? trim($_POST['sexo']) : null;
@@ -45,7 +44,6 @@ if(isset($_POST['submetido'])) {
         $msgErro = implode("<br>", $erros);
         //print_r($erros);
     }
-
 
 
 } else {

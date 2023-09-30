@@ -40,7 +40,7 @@ require(__DIR__ . "/../include/header.php");
                 <td><?= $t->getMarca(); ?></td>
                 <td><?= $t->getSexo(); ?></td>
                 <td><?= $t->getEsporte(); ?></td>
-                <td><a href="editar.php?idTenis=<?= $t->getId() ?>"> 
+                <td><a href="alterar.php?idTenis=<?= $t->getId() ?>"> 
                         Editar 
                     </a>
                 </td>

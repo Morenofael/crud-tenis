@@ -21,7 +21,7 @@ class TenisController {
 
     public function atualizar(Tenis $tenis){
         $erros = $this->tenisService->validarDados($tenis);
-        if($erros) return $erros;
+        if($erros){return $erros;}
             
         $this->tenisDAO->update($tenis);
         return array();

@@ -12,7 +12,6 @@ if(isset($_POST['submetido'])) {
     //echo "clicou no gravar";
     //Captura os campo do formulário
     $nome = trim($_POST['nome']) ? trim($_POST['nome']) : null;
-    $tamanho = $_POST['tamanho'] ? $_POST['tamanho'] : null;
     $preco = is_numeric($_POST['preco']) ? $_POST['preco'] : null;
     $idMarca = is_numeric($_POST['marca']) ? $_POST['marca'] : null;
     $sexo = trim($_POST['sexo']) ? trim($_POST['sexo']) : null;

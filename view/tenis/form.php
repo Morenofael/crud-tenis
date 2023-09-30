@@ -16,10 +16,10 @@ $marcas = $marcaCont->listar();
 
 <form id="frmTenis" method="POST">
     <label for="txtNome">Nome: </label><br>
-    <input type="text" name="nome" id="txtNome"><br>
+    <input type="text" name="nome" id="txtNome" value="<?php echo $tenis ? $tenis->getNome() : ""?>"><br>
 
     <label for="txtPreco">Pre,co: </label><br>
-    <input type="number" name="preco" id="txtPreco"><br>
+    <input type="number" name="preco" id="txtPreco" value="<?php echo $tenis ? $tenis->getPreco() : ""?>"><br>
     
     <label for="selMarca">Marca: </label><br>
     <select name="marca" id="selMarca">
@@ -40,8 +40,20 @@ $marcas = $marcaCont->listar();
     <label for="selSexo">Sexo: </label><br>
     <select name="sexo" id="selSexo">
         <option value="">Selecione</option>
-        <option value="M">Masculino</option>
-        <option value="F">Feminino</option>
+        <option value="M"
+        <?php 
+            if($tenis && $tenis->getSexo() && 
+            $tenis->getSexo() == "M")
+            echo 'selected';
+                            ?>
+        >Masculino</option>
+        <option value="F"
+        <?php 
+            if($tenis && $tenis->getSexo() && 
+            $tenis->getSexo() == "F")
+            echo 'selected';
+                            ?>
+        >Feminino</option>
     </select><br>
 
     <label for="selEsporte">Esporte: </label><br>
