@@ -1,5 +1,4 @@
 <?php 
-//View para inserir alunos
 
 require_once(__DIR__ . "/../../controller/TenisController.php");
 require_once(__DIR__ . "/../../model/Tenis.php");
@@ -7,7 +6,7 @@ require_once(__DIR__ . "/../../model/Marca.php");
 require_once(__DIR__ . "/../../model/Esporte.php");
 
 $msgErro = '';
-$aluno = null;
+$tenis = null;
 
 if(isset($_POST['submetido'])) {
     //echo "clicou no gravar";
