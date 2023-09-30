@@ -19,6 +19,10 @@ class TenisController {
         return $this->tenisDAO->list();        
     }
 
+    public function buscarPorId(int $id) {
+        return $this->tenisDAO->findById($id);
+    }
+
     public function inserir(Tenis $tenis) {
         //Valida e retorna os erros caso existam
         $erros = $this->tenisService->validarDados($tenis);
