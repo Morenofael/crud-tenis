@@ -17,8 +17,10 @@ if(isset($_POST['submetido'])) {
     $sexo = trim($_POST['sexo']) ? trim($_POST['sexo']) : null;
     $idEsporte = is_numeric($_POST['esporte']) ? $_POST['esporte'] : null;
     
+    $idTenis = $_POST['id'];
     //para persistencia
     $tenis = new Tenis();
+    $tenis->setId($idTenis);
     $tenis->setNome($nome);
     $tenis->setPreco($preco);
     if($idMarca) {
@@ -32,7 +34,7 @@ if(isset($_POST['submetido'])) {
         $esporte->setId($idEsporte);
         $tenis->setEsporte($esporte);
     }
-    
+    print_r($tenis);
     $tenisCont = new TenisController();
     $erros = $tenisCont->atualizar($tenis);
 
