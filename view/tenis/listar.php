@@ -17,7 +17,7 @@ require(__DIR__ . "/../include/header.php");
 <h4>Listagem de tenis</h4>
 
 <div>
-    <a href="inserir.php">Inserir</a>
+    <a href="inserir.php" class="btn btn-success">Inserir</a>
 </div>
 
 <table class="table table-striped">
