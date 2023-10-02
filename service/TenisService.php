@@ -13,6 +13,8 @@ class TenisService {
 
         if(! $tenis->getPreco()) {
             array_push($erros, "Informe o pre,co!");
+        }else if(is_numeric($tenis->getPreco()) == false){
+            array_push($erros, "Valor do pre,co deve ser numerico!");
         }
 
         if(! $tenis->getMarca()) {

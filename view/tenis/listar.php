@@ -36,7 +36,7 @@ require(__DIR__ . "/../include/header.php");
         <?php foreach($tenis as $t): ?>
             <tr>
                 <td><?= $t->getNome(); ?></td>
-                <td><?= $t->getPreco(); ?></td>
+                <td>R$<?= $t->getPreco(); ?></td>
                 <td><?= $t->getMarca(); ?></td>
                 <td><?= $t->getSexoTexto(); ?></td>
                 <td><?= $t->getEsporte(); ?></td>
