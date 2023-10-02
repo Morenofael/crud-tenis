@@ -9,4 +9,7 @@
 
 </head>
 <body>
-    <h2>header</h2>
+    <div class="container"> <!-- sera fechado no footer -->
+        <?php
+            include_once("menu.php");
+        ?>
