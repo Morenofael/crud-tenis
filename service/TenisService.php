@@ -9,7 +9,7 @@ class TenisService {
         
         if(! $tenis->getNome()) {
             array_push($erros, "Informe o nome!");
-        }
+        }else if(strlen($tenis ->getNome()) > 40) array_push($erros, "Nome n~ao pode ser maior que 40 caracteres");
 
         if(! $tenis->getPreco()) {
             array_push($erros, "Informe o pre,co!");
