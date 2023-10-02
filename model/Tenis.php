@@ -61,6 +61,13 @@ class Tenis{
     public function getSexo(){
         return $this->sexo;
     }
+    public function getSexoTexto(){
+        if($this->getSexo()== "M"){
+            return "Masculino";
+        }else if($this->getSexo()== "F"){
+            return "Feminino";
+        }else return "Unisex";
+    }
 
     public function setEsporte($esporte){
         $this->esporte = $esporte;

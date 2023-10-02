@@ -38,7 +38,7 @@ require(__DIR__ . "/../include/header.php");
                 <td><?= $t->getNome(); ?></td>
                 <td><?= $t->getPreco(); ?></td>
                 <td><?= $t->getMarca(); ?></td>
-                <td><?= $t->getSexo(); ?></td>
+                <td><?= $t->getSexoTexto(); ?></td>
                 <td><?= $t->getEsporte(); ?></td>
                 <td><a href="alterar.php?idTenis=<?= $t->getId() ?>"> 
                         Editar 

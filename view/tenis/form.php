@@ -28,7 +28,7 @@ $marcas = $marcaCont->listar();
                         <option value="<?= $marca->getId(); ?>"
                             <?php 
                                 if($tenis && $tenis->getMarca() && 
-                                    $tenis->getMarca()->getId() == $tenis->getId())
+                                    $tenis->getMarca()->getId() == $marca->getId())
                                     echo 'selected';
                             ?>
                         >
@@ -54,6 +54,12 @@ $marcas = $marcaCont->listar();
             echo 'selected';
                             ?>
         >Feminino</option>
+        <option value="U"
+        <?php 
+            if($tenis && $tenis->getSexo() && 
+            $tenis->getSexo() == "U")
+            echo 'selected';
+                            ?>>Unisex</option>
     </select><br>
 
     <label for="selEsporte">Esporte: </label><br>
@@ -63,7 +69,7 @@ $marcas = $marcaCont->listar();
                         <option value="<?= $esporte->getId(); ?>"
                             <?php 
                                 if($tenis && $tenis->getEsporte() && 
-                                    $tenis->getEsporte()->getId() == $tenis->getId())
+                                    $tenis->getEsporte()->getId() == $esporte->getId())
                                     echo 'selected';
                             ?>
                         >
@@ -80,4 +86,9 @@ $marcas = $marcaCont->listar();
             <button type="submit">Gravar</button>
             <button type="reset">Limpar</button>
 </form>
+<?php if($msgErro): ?>
+            <div class="alert alert-danger">
+                <?php echo $msgErro; ?>
+            </div>
+        <?php endif; ?> 
 <?php require_once(__DIR__ . "/../include/footer.php")?>

@@ -40,9 +40,9 @@ if(isset($_POST['submetido'])) {
         header("location: listar.php");
         exit;
     } else { //Em caso de erros, exibí-los
-        echo "tem erros";
+        //echo "tem erros";
         $msgErro = implode("<br>", $erros);
-        print_r($erros);
+        //echo $msgErro;
     }
 }
 

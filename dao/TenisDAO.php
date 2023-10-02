@@ -13,7 +13,11 @@ class TenisDAO{
     }
 
     public function list() {
-        $sql = "SELECT * FROM `tenis`"; 
+        $sql = "SELECT t.*," . 
+                " m.nome AS nome_marca, m.nacionalidade AS nacionalidade_marca, e.nome AS nome_esporte" . 
+                " FROM tenis t" .
+                " JOIN marcas m ON (m.id = t.id_marca) JOIN esportes e ON (e.id = t.id_esporte)" .
+                " ORDER BY t.nome";
         $stm = $this->conn->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();
@@ -55,8 +59,11 @@ class TenisDAO{
     public function findById(int $id) {
         $conn = Connection::getConnection();
 
-        $sql = "SELECT * FROM tenis" . 
-                " WHERE id = ?";
+        $sql = "SELECT t.*," . 
+                " m.nome AS nome_marca, m.nacionalidade AS nacionalidade_marca, e.nome AS nome_esporte" . 
+                " FROM tenis t" .
+                " JOIN marcas m ON (m.id = t.id_marca) JOIN esportes e ON (e.id = t.id_esporte)" .
+                " WHERE t.id = ?";
 
         $stmt = $conn->prepare($sql);
         $stmt->execute([$id]);
@@ -85,12 +92,13 @@ class TenisDAO{
 
             $marca = new Marca();
             $marca->setId($reg['id_marca'])
-                ->setNome($reg['nome']);
+                ->setNome($reg['nome_marca'])
+                ->setNacionalidade(($reg['nacionalidade_marca']));
             $tenis->setMarca($marca)
                     ->setSexo($reg["sexo"]);
             $esporte = new Esporte();
             $esporte->setId($reg['id_esporte'])
-                    ->setNome($reg['nome']);
+                    ->setNome($reg['nome_esporte']);
             $tenis->setEsporte($esporte);
             array_push($teniss, $tenis);
         }
