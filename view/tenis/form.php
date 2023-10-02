@@ -13,16 +13,24 @@ $marcaCont = new MarcaController();
 $marcas = $marcaCont->listar();
 ?>
 <h2><?php echo (!$tenis || $tenis->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Tenis</h2>
+<div class="row">
+<div class="col-6">
 
 <form id="frmTenis" method="POST">
-    <label for="txtNome">Nome: </label><br>
-    <input type="text" name="nome" id="txtNome" value="<?php echo $tenis ? $tenis->getNome() : ""?>"><br>
+    <div class="form-group">
+    <label for="txtNome" class="form-label">Nome: </label><br>
+    <input type="text" class="form-control col-" name="nome" id="txtNome" value="<?php echo $tenis ? $tenis->getNome() : ""?>"><br>
+    </div>
 
-    <label for="txtPreco">Pre,co: </label><br>
-    <input type="number" name="preco" id="txtPreco" value="<?php echo $tenis ? $tenis->getPreco() : ""?>"><br>
-    
-    <label for="selMarca">Marca: </label><br>
-    <select name="marca" id="selMarca">
+    <div class="form-group">
+    <label for="txtPreco" class="form-label">Pre,co: </label><br>
+    <input type="number" class="form-control" name="preco" id="txtPreco" value="<?php echo $tenis ? $tenis->getPreco() : ""?>"><br>
+    </div>
+</div>
+    <div class="col-6">
+    <div class="form-group">
+    <label for="selMarca" class="form-label">Marca: </label><br>
+    <select name="marca" class="form-control" id="selMarca">
         <option value="">Selecione</option>
         <?php foreach($marcas as $marca): ?>
                         <option value="<?= $marca->getId(); ?>"
@@ -36,9 +44,11 @@ $marcas = $marcaCont->listar();
                         </option>
                     <?php endforeach; ?>
     </select><br>
-    
-    <label for="selSexo">Sexo: </label><br>
-    <select name="sexo" id="selSexo">
+    </div>
+
+    <div class="form-group">
+    <label for="selSexo" class="form-label">Sexo: </label><br>
+    <select name="sexo" class="form-control" id="selSexo">
         <option value="">Selecione</option>
         <option value="M"
         <?php 
@@ -61,9 +71,11 @@ $marcas = $marcaCont->listar();
             echo 'selected';
                             ?>>Unisex</option>
     </select><br>
+    </div>
 
-    <label for="selEsporte">Esporte: </label><br>
-    <select name="esporte" id="selEsporte">
+    <div class="form-group">
+    <label for="selEsporte" class="form-label">Esporte: </label><br>
+    <select name="esporte" class="form-control" id="selEsporte">
         <option value="">Selecione</option>
         <?php foreach($esportes as $esporte): ?>
                         <option value="<?= $esporte->getId(); ?>"
@@ -77,15 +89,17 @@ $marcas = $marcaCont->listar();
                         </option>
                     <?php endforeach; ?>
     </select><br>
-
+    </div>
+    </div>
     <input type="hidden" name="id" 
                 value="<?php echo ($tenis ? $tenis->getId() : 0); ?>" />
             
             <input type="hidden" name="submetido" value="1" />
 
-            <button type="submit">Gravar</button>
-            <button type="reset">Limpar</button>
+            <button type="submit" class="btn btn-success col-2 m-4">Gravar</button>
+            <button type="reset" class="btn btn-danger col-2 m-4">Limpar</button>
 </form>
+</div>
 <?php if($msgErro): ?>
             <div class="alert alert-danger">
                 <?php echo $msgErro; ?>
