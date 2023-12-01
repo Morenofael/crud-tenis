@@ -32,3 +32,17 @@ INSERT INTO esportes (nome) VALUES ("Corrida");
 
 ALTER TABLE tenis ADD CONSTRAINT fk_marca FOREIGN KEY (id_marca) REFERENCES marcas (id);
 ALTER TABLE tenis ADD CONSTRAINT fk_esporte FOREIGN KEY (id_esporte) REFERENCES esportes (id);
+
+/* TABELA times */
+CREATE TABLE clubes ( 
+  id int AUTO_INCREMENT NOT NULL, 
+  nome varchar(70) NOT NULL,
+  CONSTRAINT pk_clubes PRIMARY KEY (id) 
+);
+ALTER TABLE clubes ADD CONSTRAINT fk_esporte2 FOREIGN KEY (id_esporte) REFERENCES esportes (id);
+
+INSERT INTO clubes (nome, id_esporte) VALUES ('Bulls', 1);
+INSERT INTO clubes (nome, id_esporte) VALUES ('Sao Paulo', 2);
+INSERT INTO clubes (nome, id_esporte) VALUES ('Vasco', 2);
+
+/*TODO implementar resto da base de dados*/
