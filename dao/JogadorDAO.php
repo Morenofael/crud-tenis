@@ -14,7 +14,7 @@ class JogadorDAO{
     public function list() {
         $sql = "SELECT j.*," . 
                 " c.nome AS nome_clube " . 
-                " FROM jogador j " .
+                " FROM jogadores j " .
                 " JOIN clubes c ON (c.id = j.id_clube) " .
                 " ORDER BY j.nome";
         $stm = $this->conn->prepare($sql);
@@ -57,7 +57,7 @@ class JogadorDAO{
 
         $sql = "SELECT j.*," . 
                 " c.nome AS nome_clube " . 
-                " FROM jogador j " .
+                " FROM jogadores j " .
                 " JOIN clubes c ON (c.id = j.id_clube) " .
                 " WHERE j.id = ?";
 

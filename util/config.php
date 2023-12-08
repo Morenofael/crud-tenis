@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 define("DB_HOST", "localhost");
 define("DB_NAME", "crud_tenis");
-define("DB_USER", "root");
-define("DB_PASSWORD", "bancodedados");
+define("DB_USER", "newuser");
+define("DB_PASSWORD", "password");
 define("BASE_URL", "");
 define("DIR_ARQUIVOS", "/crud-tenis/arquivos");
