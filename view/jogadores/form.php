@@ -66,14 +66,14 @@ $esportes = $esporteCont->listar();
                     id="uplFoto" name="foto"
                     accept="image/*" />	   
     </div>
-	<?php if($jogador && $jogador->getImgFoto()): ?>
+	<?php if($aluno && $aluno->getImgFoto()): ?>
                 <div class="mb-3">
-                    <img src="<?= URL_ARQUIVOS . "/" . $jogador->getImgFoto() ?>"
+                    <img src="<?= URL_ARQUIVOS . "/" . $aluno->getImgFoto() ?>"
                         style="height: 80px; width: auto;">
                 </div>
             <?php endif; ?>
             <input type="hidden" name="fotoAntiga"
-                value="<?php echo ($jogador ? $jogador->getImgFoto() : ""); ?>">
+                value="<?php echo ($aluno ? $aluno->getImgFoto() : ""); ?>">
 
     </div>
     <input type="hidden" name="id" 
