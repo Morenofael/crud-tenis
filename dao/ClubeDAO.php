@@ -1,6 +1,7 @@
 <?php
 
 include_once(__DIR__ . "/../util/Connection.php");
+include_once(__DIR__ . "/../model/Esporte.php");
 include_once(__DIR__ . "/../model/Clube.php");
 
 class ClubeDAO{
@@ -23,8 +24,11 @@ class ClubeDAO{
             $c = new Clube();
             $c->setId($reg['id'])
                 ->setNome($reg['nome'])
-                ->setAbrev($reg['abrev'])
-                ->setEsporte($reg['esporte']);
+                ->setAbrev($reg['abrev']);
+                $esporte = new Esporte();
+                $esporte->setId($reg['id_esporte']);
+                
+            $c->setEsporte($esporte);
             array_push($clubes, $c);
         }
         return $clubes;

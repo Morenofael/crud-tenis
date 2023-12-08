@@ -3,6 +3,7 @@
 include_once(__DIR__ . "/../util/Connection.php");
 include_once(__DIR__ . "/../model/Jogador.php");
 include_once(__DIR__ . "/../model/Clube.php");
+include_once(__DIR__ . "/../model/Esporte.php");
 class JogadorDAO{
     private $conn;
 
@@ -13,7 +14,7 @@ class JogadorDAO{
 
     public function list() {
         $sql = "SELECT j.*," . 
-                " c.nome AS nome_clube " . 
+                " c.nome AS nome_clube, c.abrev AS abrev_clube, c.id_esporte AS esporte_clube " . 
                 " FROM jogadores j " .
                 " JOIN clubes c ON (c.id = j.id_clube) " .
                 " ORDER BY j.nome";
@@ -56,7 +57,7 @@ class JogadorDAO{
         $conn = Connection::getConnection();
 
         $sql = "SELECT j.*," . 
-                " c.nome AS nome_clube " . 
+                " c.nome AS nome_clube, c.abrev AS abrev_clube " . 
                 " FROM jogadores j " .
                 " JOIN clubes c ON (c.id = j.id_clube) " .
                 " WHERE j.id = ?";
@@ -87,10 +88,12 @@ class JogadorDAO{
             $clube = new Clube();
             $clube->setId($reg['id_clube'])
                 ->setAbrev($reg['abrev_clube'])
-                ->setEsporte($reg['esporte_clube'])
                 ->setNome($reg['nome_clube']);
+            $esporte = new Esporte();
+            $esporte->setId($reg['esporte_clube']);
+            $clube->setEsporte($esporte);
             $jogador->setClube($clube)
-                    ->setImgFoto($reg["imgFoto"])
+                    ->setImgFoto($reg["img_foto"])
                     ->setNome($reg["nome"]);
                     array_push($jogadores, $jogador);
         }

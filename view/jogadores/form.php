@@ -1,7 +1,7 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include_once(__DIR__ . "/../../controller/ClubeController.php");
 include_once(__DIR__ . "/../../controller/EsporteController.php");
@@ -12,7 +12,7 @@ $clubes = $clubeCont->listar();
 $esporteCont = new EsporteController();
 $esportes = $esporteCont->listar();
 ?>
-<h2><?php echo (!$clube || $clube->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Clubes</h2>
+<h2><?php echo (!$jogador || $jogador->getId() <= 0 ? 'Inserir' : 'Alterar') ?> Jogadores</h2>
 <div class="row">
 <div class="col-6">
 
@@ -66,14 +66,14 @@ $esportes = $esporteCont->listar();
                     id="uplFoto" name="foto"
                     accept="image/*" />	   
     </div>
-	<?php if($aluno && $aluno->getImgFoto()): ?>
+	<?php if($jogador && $jogador->getImgFoto()): ?>
                 <div class="mb-3">
-                    <img src="<?= URL_ARQUIVOS . "/" . $aluno->getImgFoto() ?>"
+                    <img src="<?= URL_ARQUIVOS . "/" . $jogador->getImgFoto() ?>"
                         style="height: 80px; width: auto;">
                 </div>
             <?php endif; ?>
             <input type="hidden" name="fotoAntiga"
-                value="<?php echo ($aluno ? $aluno->getImgFoto() : ""); ?>">
+                value="<?php echo ($jogador ? $jogador->getImgFoto() : ""); ?>">
 
     </div>
     <input type="hidden" name="id" 
