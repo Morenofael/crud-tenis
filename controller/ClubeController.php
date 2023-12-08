@@ -10,4 +10,7 @@ class ClubeController{
     public function listar(){
         return $this->clubeDAO->list();
     }
+    public function listarPorEsporte(int $idEsporte){
+    	return $this->clubeDAO->listByEsporte($idEsporte);
+    }
 }
