@@ -1,0 +1,43 @@
+.main{
+	padding: 32px;
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+.icon{
+	width: 2rem;
+	height: auto;
+}
+.botoes-produto-wrapper > *{
+	color: black;	
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 10px;
+}
+#main-img{
+	width: 500px;
+	height: auto;
+	max-width: 100%;
+	max-height: 750px;
+	object-fit: fill;
+}
+.sec-imagens-wrapper{
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 20px;
+}
+.muda-index{
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	background-color: grey;
+	border-radius: 50px;
+}
+.mouse-pointer{
+	cursor: crosshair;
+}
+.sec-img{
+	width: 200px;
+	height: 200px;
+}

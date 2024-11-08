@@ -1,0 +1,26 @@
+nav{
+	padding: 5px;
+	background-color: #FBFBFB; 
+}
+#conteudoNavbarSuportado{
+	display: flex;
+	justify-content: space-between;
+}
+#menu-logo{
+	height: 50px;
+	width: auto;
+}
+.menu-logo-wrapper{
+	display: flex;
+	align-items: center;
+}
+.nav-list{
+	display: flex;
+	text-align: none;
+	list-style: none;
+	align-items: center;
+	gap: 12px;
+}
+.nav-preto a{
+	color: black;
+}
